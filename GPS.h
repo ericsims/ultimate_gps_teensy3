@@ -28,6 +28,7 @@
 #define PARSED_GGA      3
 #define PARSED_RMC      4
 #define PARSED_ACK      5
+#define PARSED_NO_LOCK  6
 
 // different commands to set the update rate from once per ten seconds (0.1 Hz) to 10 times a second (10Hz)
 #define UPDATE_RATE_10000   "$PMTK220,10000*2F"
