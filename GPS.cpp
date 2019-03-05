@@ -230,8 +230,8 @@ uint8_t GPS::parseRMC(const char* nmea, const uint32_t now)
 
 uint8_t GPS::parse(const char* nmea, const uint32_t now)
 {
-  Serial.print("P: ");
-  Serial.println(nmea);
+  //Serial.print("P: ");
+  //Serial.println(nmea);
     if (*nmea != '$') {
         return PARSED_ERROR;
     }
@@ -300,6 +300,14 @@ bool GPS::sentenceAvailable(void)
   return bufferComplete != NULL;
 }
 
+
+const char* GPS::getLastSentence(void)
+{
+	if(bufferComplete != NULL)
+		return bufferComplete;
+	else
+		return "";
+}
 // Call this from loop to parse any available sentences
 uint8_t GPS::parseSentence(void)
 {

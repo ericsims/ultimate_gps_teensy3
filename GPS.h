@@ -56,6 +56,7 @@ public:
     void poll(void);
     uint8_t parseSentence(void);
     bool sentenceAvailable(void);
+    const char* getLastSentence(void);
 
     void standby();
     void setUpdateRate(const char*);
@@ -68,8 +69,6 @@ public:
     // Don't set it though
     uint32_t millisHeadingAcquired, millisAltitudeAcquired, millisPositionAcquired, millisDataRead;
     uint8_t hour, minute, seconds, year, month, day;
-    float latitudeDegreesAndFractionalMinutes; 
-    float longitudeDegreesAndFractionalMinutes;
     float latitude; // In decimal degrees (no funny degrees and fractional minutes)
     float longitude; // In degrees
     float altitude; // In meters
